@@ -42,8 +42,18 @@ def create_account():
             messagebox.showerror("Error", "Please enter a username and password.")
 
 
-        elif len(password) < 8:
-            messagebox.showerror("Error", "Password must be at least 8 characters.") 
+        elif len(password) < 9:
+            messagebox.showerror("Error", "Password must be at least 9 characters.")
+
+        elif not any(c.isupper() for c in password):
+            messagebox.showerror("Error", "Password must contain an uppercase letter.")
+            
+        elif not any(c.isupper() for c in password):
+            messagebox.showerror("Error", "Password must contain an lowercase letter.")
+            
+        elif not any(c.isupper() for c in password):
+            messagebox.showerror("Error", "Password must contain a number.")
+            
         else:
              accounts[username] = password
              messagebox.showinfo("Account Created", "Your account was created successfully.")
