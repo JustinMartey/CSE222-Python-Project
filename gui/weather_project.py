@@ -48,10 +48,10 @@ def create_account():
         elif not any(c.isupper() for c in password):
             messagebox.showerror("Error", "Password must contain an uppercase letter.")
             
-        elif not any(c.isupper() for c in password):
+        elif not any(c.islower() for c in password):
             messagebox.showerror("Error", "Password must contain an lowercase letter.")
             
-        elif not any(c.isupper() for c in password):
+        elif not any(c.isdigit() for c in password):
             messagebox.showerror("Error", "Password must contain a number.")
             
         else:
