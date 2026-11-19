@@ -11,8 +11,26 @@ def login():
         messagebox.showerror("Login Error", "Please enter a username and password.")
     elif username in accounts and accounts[username] == password:
         messagebox.showinfo("Login", "Login successful!")
+        open_weather_selection()
     else:
         messagebox.showerror("Login Error", "Incorrect username or password.")
+
+def open_weather_selection():
+    weather_window = tk.Toplevel(window)
+    weather_window.title("Weather Data Selection")
+    weather_window.geometry("450x350")
+    title = tk.Label(weather_window, text="Select Weather Data", font=("Arial", 18, "bold"))
+    title.pack(pady=20)
+    weather_type = tk.StringVar(value="Temperature")
+
+    tk.Radiobutton(weather_window, text="Temperature",
+                   variable=weather_type, value="Temperature").pack()
+
+    tk.Radiobutton(weather_window, text="Precipitation",
+                   variable=weather_type, value="Precipitation").pack()
+
+    tk.Radiobutton(weather_window, text="Wind Speed",
+                   variable=weather_type, value="Wind Speed").pack()
 
 def create_account():
     account_window = tk.Toplevel(window)
