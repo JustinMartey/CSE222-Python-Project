@@ -32,6 +32,12 @@ def open_weather_selection():
     tk.Radiobutton(weather_window, text="Wind Speed",
                    variable=weather_type, value="Wind Speed").pack()
 
+    tk.Button(weather_window, text="Continue",
+              command=lambda: messagebox.showinfo(
+                  "Weather Selection",
+                  "You selected: " + weather_type.get()
+              )).pack(pady=20)
+
 def create_account():
     account_window = tk.Toplevel(window)
     account_window.title("Create Account")
