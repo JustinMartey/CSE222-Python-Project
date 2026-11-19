@@ -37,7 +37,8 @@ def open_weather_selection():
                   "Weather Selection",
                   "You selected: " + weather_type.get()
               )).pack(pady=20)
-
+    tk.Button(weather_window, text="Back",
+              command=weather_window.destroy).pack(pady=5)
 def create_account():
     account_window = tk.Toplevel(window)
     account_window.title("Create Account")
