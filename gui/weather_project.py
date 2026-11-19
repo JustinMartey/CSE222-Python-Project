@@ -116,7 +116,21 @@ password_label.pack()
 
 password_entry = tk.Entry(window, width=30, show="*")
 password_entry.pack(pady=5)
+def toggle_password():
+    if show_password_var.get():
+        password_entry.config(show="")
+    else:
+        password_entry.config(show="*")
 
+show_password_var = tk.BooleanVar()
+
+show_password_checkbox = tk.Checkbutton(
+    window,
+    text="Show Password",
+    variable=show_password_var,
+    command=toggle_password
+)
+show_password_checkbox.pack(pady=5)
 login_button = tk.Button(window, text="Login", width=15, command=login)
 login_button.pack(pady=5)
 
