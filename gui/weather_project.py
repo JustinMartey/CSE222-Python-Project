@@ -10,7 +10,7 @@ def login():
     if username == "" or password == "":
         messagebox.showerror("Login Error", "Please enter a username and password.")
     elif username in accounts and accounts[username] == password:
-        messagebox.showinfo("Login", "Login successful!")
+        messagebox.showinfo("Login", "Welcome, " + username + "!")
         open_weather_selection()
     else:
         messagebox.showerror("Login Error", "Incorrect username or password.")
