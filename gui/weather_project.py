@@ -39,6 +39,13 @@ def open_weather_selection():
               )).pack(pady=20)
     tk.Button(weather_window, text="Back",
               command=weather_window.destroy).pack(pady=5)
+
+    tk.Button(weather_window, text="Logout",
+              command=lambda: [
+                  weather_window.destroy(),
+                  username_entry.delete(0, tk.END),
+                  password_entry.delete(0, tk.END)
+              ]).pack(pady=5)
 def create_account():
     account_window = tk.Toplevel(window)
     account_window.title("Create Account")
